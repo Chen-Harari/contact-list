@@ -1,0 +1,32 @@
+@use "src/variables";
+@use "src/mixin";
+
+.header{
+  background-color: white;
+  width:100%;
+  position: absolute;
+  top: 0;
+  left:0;
+}
+.content{
+  //mobile screen view
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height:100%;
+  //view of screens larger than mobile
+  @include mixin.responsive(variables.$smallScreenSize){
+    flex-direction: row;
+  }
+}
+.title{
+  flex-basis: 50%;
+  color:lightgrey;
+  font-size:50px;
+  text-align: center;
+}
+
+.search{
+  flex-basis: 40%;
+  margin: auto;//places search box in middle of div
+}

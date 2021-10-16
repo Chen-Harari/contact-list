@@ -1,0 +1,31 @@
+@use "src/variables";
+@use "src/mixin";
+
+.container {
+  display:flex;
+  flex-wrap: wrap;
+  margin-top:200px;
+  justify-content: center;
+
+  .col{
+    //mobile view
+    flex-basis:70%;
+    background-color: white;
+    margin:10px;
+    //view of screens larger than mobile
+    @include mixin.responsive(variables.$smallScreenSize){
+        flex-basis:22%;//(22% and not 25% to include the margin)
+        }
+    }
+
+}
+
+.item{
+  text-align: center;
+}
+
+
+
+
+
+

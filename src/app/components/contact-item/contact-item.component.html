@@ -1,0 +1,16 @@
+<div class="contact-item"(mouseenter)="showExtraDetails()" (mouseleave)="hideExtraDetails()">
+  <div class="images">
+    <img class="icon" src="{{contact.icon}}" alt='image'>
+    <img class="profile" src="{{contact.profile_image}}" alt='image'>
+  </div>
+
+  <div class="details">
+    <h3>{{contact.name | titlecase}}  </h3>
+    <label>{{contact.job.length >0 ? contact.job : "No job title" |titlecase}} | {{contact.company_name | titlecase}}</label>
+    <p [ngStyle]="{'visibility':isEveryDetailNeeded ? 'visible': 'hidden'}">
+      <label>Phone Number {{contact.phone}}</label>
+      <br>
+      <label>{{contact.email}}</label>
+    </p>
+  </div>
+</div>
